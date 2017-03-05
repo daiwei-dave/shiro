@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.atguigu.shiro/realms/SecondRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.atguigu.shiro/realms/ShiroRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com.atguigu.shiro/realms/TestRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/handlers/ShiroHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/handlers/ShiroHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/realms/ShiroRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/realms/ShiroRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/realms/TestRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/shiro/realms/TestRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/shiro/handlers/ShiroHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/shiro/realms/ShiroRealm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/shiro/realms/TestRealm.java" charset="GBK" />
+  </component>
+</project>
