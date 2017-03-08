@@ -11,7 +11,8 @@ import org.apache.shiro.util.CollectionUtils;
 import java.util.Collection;
 
 /**
- * <p>User: Zhang Kaitao
+ * 认证策略
+ * <p>User: Zhang Kaitao updated by daiwei
  * <p>Date: 14-1-25
  * <p>Version: 1.0
  */

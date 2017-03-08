@@ -32,9 +32,14 @@ public class AuthenticatorTest {
 
         //得到一个身份集合，其包含了Realm验证成功的身份信息
         PrincipalCollection principalCollection = subject.getPrincipals();
+        //打印Realm验证成功的身份信息
+        System.out.println(principalCollection.toString());
         Assert.assertEquals(2, principalCollection.asList().size());
     }
 
+    /**
+     * expected = UnknownAccountException.class使当抛出UnknownAccountException时能正常运行
+     */
     @Test(expected = UnknownAccountException.class)
     public void testAllSuccessfulStrategyWithFail() {
         login("classpath:shiro-authenticator-all-fail.ini");
