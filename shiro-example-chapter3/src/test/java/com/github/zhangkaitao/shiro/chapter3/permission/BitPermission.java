@@ -32,16 +32,17 @@ public class BitPermission implements Permission {
     private String instanceId;
 
     public BitPermission(String permissionString) {
+        //以"+"号做分隔符
         String[] array = permissionString.split("\\+");
 
         if(array.length > 1) {
             resourceIdentify = array[1];
         }
-
+        //设置资源为*
         if(StringUtils.isEmpty(resourceIdentify)) {
             resourceIdentify = "*";
         }
-
+        //设置权限
         if(array.length > 2) {
             permissionBit = Integer.valueOf(array[2]);
         }
@@ -49,15 +50,16 @@ public class BitPermission implements Permission {
         if(array.length > 3) {
             instanceId = array[3];
         }
-
+        //设置实例
         if(StringUtils.isEmpty(instanceId)) {
             instanceId = "*";
         }
 
     }
 
-    @Override
+
     public boolean implies(Permission p) {
+        //不是BitPermission的实咧
         if(!(p instanceof BitPermission)) {
             return false;
         }

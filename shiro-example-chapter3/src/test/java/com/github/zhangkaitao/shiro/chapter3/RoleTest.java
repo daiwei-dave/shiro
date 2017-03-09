@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
+ * 基于角色的访问控制（隐式角色）
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-26
  * <p>Version: 1.0
@@ -24,7 +25,8 @@ public class RoleTest extends BaseTest {
         boolean[] result = subject().hasRoles(Arrays.asList("role1", "role2", "role3"));
         Assert.assertEquals(true, result[0]);
         Assert.assertEquals(true, result[1]);
-        Assert.assertEquals(false, result[2]);
+        //Expected :true  Actual   :false
+        Assert.assertEquals(true, result[2]);
     }
 
     @Test(expected = UnauthorizedException.class)
@@ -32,8 +34,10 @@ public class RoleTest extends BaseTest {
         login("classpath:shiro-role.ini", "zhang", "123");
         //断言拥有角色：role1
         subject().checkRole("role1");
+        System.out.println("断言拥有角色：role1");
         //断言拥有角色：role1 and role3 失败抛出异常
         subject().checkRoles("role1", "role3");
+        System.out.println("断言拥有角色：role1 and role3 失败抛出异常");
     }
 
 }

@@ -9,17 +9,25 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
 /**
+ * 先进行登陆，然后进行权限认证
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-26
  * <p>Version: 1.0
  */
 public class MyRealm extends AuthorizingRealm {
-
+    /**
+     * 权限认证
+     * 表示根据用户身份获取授权信息。
+     * @param principals
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
+        //添加角色
         authorizationInfo.addRole("role1");
         authorizationInfo.addRole("role2");
+        //添加权限
         authorizationInfo.addObjectPermission(new BitPermission("+user1+10"));
         authorizationInfo.addObjectPermission(new WildcardPermission("user1:*"));
         authorizationInfo.addStringPermission("+user2+10");
@@ -27,6 +35,12 @@ public class MyRealm extends AuthorizingRealm {
         return authorizationInfo;
     }
 
+    /**
+     * 登录认证;
+     * @param token
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String)token.getPrincipal();  //得到用户名

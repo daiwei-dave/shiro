@@ -1,4 +1,4 @@
-最近项目比较紧，没有时间解答一些疑问，暂时无法回复一些问题，很抱歉，不过可以加群（334194438/348194195）一起讨论问题。
+本分支代码拷贝自http://jinnianshilongnian.iteye.com/blog/2018398，我只是拿来学习，其中做了部分更改。若追查版权，我已声明版权归http://jinnianshilongnian.iteye.com/blog/2018398的博主所有。
 
 <h2 style="font-size: 14px;"><a href="http://jinnianshilongnian.iteye.com/blog/2018398" target="_blank">Shiro目录</a> | <a href="http://jinnianshilongnian.iteye.com/blog/2018398" target="_blank">点击下载PDF版</a></h2>
 <p style="font-size: 14px;"><a href="/blog/2018936" target="_blank">第一章&nbsp; Shiro简介</a></p>

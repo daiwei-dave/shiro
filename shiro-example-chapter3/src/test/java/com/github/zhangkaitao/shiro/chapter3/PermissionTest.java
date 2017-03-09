@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
+ * 基于资源的访问控制（显示角色）
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-26
  * <p>Version: 1.0
