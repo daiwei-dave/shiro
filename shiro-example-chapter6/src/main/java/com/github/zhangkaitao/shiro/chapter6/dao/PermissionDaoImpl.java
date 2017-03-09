@@ -11,8 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * <p>User: Zhang Kaitao
- * <p>Date: 14-1-28
+ * <p>User: daiwei
+ * <p>Date: 2017-3-9
  * <p>Version: 1.0
  */
 public class PermissionDaoImpl implements PermissionDao {
@@ -21,10 +21,10 @@ public class PermissionDaoImpl implements PermissionDao {
 
     public Permission createPermission(final Permission permission) {
         final String sql = "insert into sys_permissions(permission, description, available) values(?,?,?)";
-
+        //钥匙扣
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
+
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement psst = connection.prepareStatement(sql,  new String[] { "id" });
                 psst.setString(1, permission.getPermission());

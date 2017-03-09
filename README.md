@@ -1,12 +1,12 @@
 本分支代码拷贝自http://jinnianshilongnian.iteye.com/blog/2018398，我只是拿来学习，其中做了部分更改。若追查版权，我已声明版权归http://jinnianshilongnian.iteye.com/blog/2018398的博主所有。
 
 <h2 style="font-size: 14px;"><a href="http://jinnianshilongnian.iteye.com/blog/2018398" target="_blank">Shiro目录</a> | <a href="http://jinnianshilongnian.iteye.com/blog/2018398" target="_blank">点击下载PDF版</a></h2>
-<p style="font-size: 14px;"><a href="/blog/2018936" target="_blank">第一章&nbsp; Shiro简介</a></p>
-<p style="font-size: 14px;"><a href="/blog/2019547" target="_blank">第二章&nbsp; 身份验证</a></p>
-<p style="font-size: 14px;"><a href="/blog/2020017" target="_blank">第三章&nbsp; 授权</a></p>
+<p style="font-size: 14px;"><a href="/blog/2018936" target="_blank">第一章&nbsp; Shiro简介</a>（重点掌握）</p>
+<p style="font-size: 14px;"><a href="/blog/2019547" target="_blank">第二章&nbsp; 身份验证</a>（重点掌握）</p>
+<p style="font-size: 14px;"><a href="/blog/2020017" target="_blank">第三章&nbsp; 授权</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2020820" target="_blank">第四章&nbsp; INI配置</a></p>
 <p style="font-size: 14px;"><a href="/blog/2021439" target="_blank">第五章&nbsp; 编码/加密</a></p>
-<p style="font-size: 14px;"><a href="/blog/2022468" target="_blank">第六章&nbsp; Realm及相关对象</a></p>
+<p style="font-size: 14px;"><a href="/blog/2022468" target="_blank">第六章&nbsp; Realm及相关对象</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2024723" target="_blank">第七章&nbsp; 与Web集成</a></p>
 <p style="font-size: 14px;"><a href="/blog/2025656" target="_self">第八章 拦截器机制</a></p>
 <p style="font-size: 14px;"><a href="/blog/2026398" target="_blank">第九章 JSP标签</a></p>

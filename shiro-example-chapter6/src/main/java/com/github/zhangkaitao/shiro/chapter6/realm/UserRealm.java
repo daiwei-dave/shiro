@@ -50,7 +50,7 @@ public class UserRealm extends AuthorizingRealm {
                 user.getUsername(), //用户名
                 user.getPassword(), //密码
                 ByteSource.Util.bytes(user.getCredentialsSalt()),//salt=username+salt
-                getName()  //realm name
+                getName()  //realm name  域名
         );
         return authenticationInfo;
     }

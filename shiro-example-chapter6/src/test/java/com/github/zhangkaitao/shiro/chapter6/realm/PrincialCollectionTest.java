@@ -26,21 +26,22 @@ public class PrincialCollectionTest extends BaseTest {
         //获取Primary Principal（即第一个）
         Object primaryPrincipal1 = subject.getPrincipal();
         PrincipalCollection princialCollection = subject.getPrincipals();
+
         Object primaryPrincipal2 = princialCollection.getPrimaryPrincipal();
 
         //但是因为多个Realm都返回了Principal，所以此处到底是哪个是不确定的
         Assert.assertEquals(primaryPrincipal1, primaryPrincipal2);
 
 
-        //返回 a b c
+        //获取所有身份验证成功的Realm名字。返回 a b c
         Set<String> realmNames = princialCollection.getRealmNames();
         System.out.println(realmNames);
 
-        //因为MyRealm1和MyRealm2返回的凭据都是zhang，所以排重了
+        //将身份信息转换为Set/List，即使转换为List，也是先转换为Set再完成的。因为MyRealm1和MyRealm2返回的凭据都是zhang，所以排重了
         Set<Object> principals = princialCollection.asSet(); //asList和asSet的结果一样
         System.out.println(principals);
 
-        //根据Realm名字获取
+        //根据Realm名字获取获取身份
         Collection<User> users = princialCollection.fromRealm("c");
         System.out.println(users);
     }

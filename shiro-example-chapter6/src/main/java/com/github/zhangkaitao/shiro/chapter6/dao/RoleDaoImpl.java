@@ -24,7 +24,7 @@ public class RoleDaoImpl implements RoleDao {
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
+
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement psst = connection.prepareStatement(sql, new String[] { "id" });
                 psst.setString(1, Role.getRole());
@@ -47,7 +47,7 @@ public class RoleDaoImpl implements RoleDao {
         jdbcTemplate.update(sql, roleId);
     }
 
-    @Override
+
     public void correlationPermissions(Long roleId, Long... permissionIds) {
         if(permissionIds == null || permissionIds.length == 0) {
             return;
@@ -61,7 +61,7 @@ public class RoleDaoImpl implements RoleDao {
     }
 
 
-    @Override
+
     public void uncorrelationPermissions(Long roleId, Long... permissionIds) {
         if(permissionIds == null || permissionIds.length == 0) {
             return;
