@@ -21,6 +21,7 @@ public class PasswordTest extends BaseTest {
     @Test
     public void testPasswordServiceWithMyRealm() {
         login("classpath:shiro-passwordservice.ini", "wu", "123");
+        System.out.println("登陆成功");
     }
 
     @Test

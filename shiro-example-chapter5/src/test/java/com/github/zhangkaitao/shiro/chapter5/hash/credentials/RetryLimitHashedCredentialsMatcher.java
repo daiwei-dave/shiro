@@ -42,6 +42,7 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
         }
 
         boolean matches = super.doCredentialsMatch(token, info);
+        //如果密码输入正确
         if(matches) {
             //clear retry count
             passwordRetryCache.remove(username);

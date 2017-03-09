@@ -6,6 +6,13 @@
 
 
     <!-- 登录记录缓存 锁定10分钟 -->
+    <!-- maxEntriesLocalHeap 用来限制当前缓存在堆内存上所能保存的最大元素数量
+        eternal:对象是否永久有效，一但设置了，timeout将不起作用。
+        timeToIdleSeconds：设置对象在失效前的允许闲置时间（单位：秒）。仅当eternal=false对象不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+        timeToLiveSeconds：设置对象在失效前允许存活时间（单位：秒）。最大时间介于创建时间和失效时间之间。仅当eternal=false对象不是永久有效时使用，默认是0.，也就是对象存活时间无穷大。
+        overflowToDisk：当内存中对象数量达到maxElementsInMemory时，Ehcache将会对象写到磁盘中。
+        statistics="true" 进行统计
+    -->
     <cache name="passwordRetryCache"
            maxEntriesLocalHeap="2000"
            eternal="false"
@@ -14,5 +21,6 @@
            overflowToDisk="false"
            statistics="true">
     </cache>
+
 
 </ehcache>
