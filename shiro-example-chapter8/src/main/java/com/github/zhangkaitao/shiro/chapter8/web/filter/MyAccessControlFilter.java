@@ -11,11 +11,27 @@ import javax.servlet.ServletResponse;
  * <p>Version: 1.0
  */
 public class MyAccessControlFilter extends AccessControlFilter {
+    /**
+     * 是否允许访问，返回true表示允许；
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return
+     * @throws Exception
+     */
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
         System.out.println("access allowed");
         return true;
     }
+
+    /**
+     * 表示访问拒绝时是否自己处理，如果返回true表示自己不处理且继续拦截器链执行，返回false表示自己已经处理了（比如重定向到另一个页面）。
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         System.out.println("访问拒绝也不自己处理，继续拦截器链的执行");

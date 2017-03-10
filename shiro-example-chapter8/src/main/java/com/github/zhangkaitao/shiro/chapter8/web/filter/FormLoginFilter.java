@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: daiwei
  * <p>Date: 14-2-4
  * <p>Version: 1.0
  */
@@ -21,6 +21,20 @@ public class FormLoginFilter extends PathMatchingFilter {
     private String loginUrl = "/login.jsp";
     private String successUrl = "/";
 
+    /**
+     * onPreHandle主要流程：
+     1、首先判断是否已经登录过了，如果已经登录过了继续拦截器链即可；
+     2、如果没有登录，看看是否是登录请求，如果是get方法的登录页面请求，则继续拦截器链（到请求页面），否则如果是get方法的其他页面请求则保存当前请求并重定向到登录页面；
+     3、如果是post方法的登录页面表单提交请求，则收集用户名/密码登录即可，如果失败了保存错误消息到“shiroLoginFailure”并返回到登录页面；
+     4、如果登录成功了，且之前有保存的请求，则重定向到之前的这个请求，否则到默认的成功页面。
+
+     * @param request
+     * @param response
+     * @param mappedValue
+     * @return {@code true} if the filter chain is allowed to continue to execute, {@code false} if a subclass has
+     *         handled the request explicitly.
+     * @throws Exception
+     */
     @Override
     protected boolean onPreHandle(ServletRequest request, ServletResponse response, Object mappedValue) throws Exception {
         if(SecurityUtils.getSubject().isAuthenticated()) {
@@ -36,7 +50,8 @@ public class FormLoginFilter extends PathMatchingFilter {
                 }
             }
             return true;//继续过滤器链
-        } else {//保存当前地址并重定向到登录界面
+        } else {
+            //保存当前地址并重定向到登录界面
             saveRequestAndRedirectToLogin(req, resp);
             return false;
         }
