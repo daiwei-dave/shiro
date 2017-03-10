@@ -10,7 +10,7 @@
 <p style="font-size: 14px;"><a href="/blog/2024723" target="_blank">第七章&nbsp; 与Web集成</a></p>
 <p style="font-size: 14px;"><a href="/blog/2025656" target="_self">第八章 拦截器机制</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2026398" target="_blank">第九章 JSP标签</a></p>
-<p style="font-size: 14px;"><a href="/blog/2028675" target="_blank">第十章&nbsp; 会话管理</a></p>
+<p style="font-size: 14px;"><a href="/blog/2028675" target="_blank">第十章&nbsp; 会话管理</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2029217" target="_blank">第十一章&nbsp; 缓存机制</a></p>
 <p style="font-size: 14px;"><a href="/blog/2029717" target="_blank">第十二章&nbsp; 与Spring集成</a></p>
 <p style="font-size: 14px;"><a href="/blog/2031823" target="_blank">第十三章&nbsp; RememberMe</a></p>

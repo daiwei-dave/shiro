@@ -14,19 +14,21 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: daiwei
  * <p>Date: 14-2-8
  * <p>Version: 1.0
  */
-public class MySessionDAO extends CachingSessionDAO {
+public class MySessionDao extends CachingSessionDAO {
 
     private JdbcTemplate jdbcTemplate = JdbcTemplateUtils.jdbcTemplate();
 
     @Override
     protected Serializable doCreate(Session session) {
         Serializable sessionId = generateSessionId(session);
+        //分配到session实列
         assignSessionId(session, sessionId);
         String sql = "insert into sessions(id, session) values(?,?)";
+        //保存会话
         jdbcTemplate.update(sql, sessionId, SerializableUtils.serialize(session));
         return session.getId();
     }

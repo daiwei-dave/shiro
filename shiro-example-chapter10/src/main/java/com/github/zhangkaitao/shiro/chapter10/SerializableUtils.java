@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
+ * 序列化工具类
  * <p>User: Zhang Kaitao
  * <p>Date: 14-2-8
  * <p>Version: 1.0

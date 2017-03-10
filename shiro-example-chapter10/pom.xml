@@ -40,6 +40,7 @@
             <version>1.2.2</version>
         </dependency>
 
+        <!--Shiro提供了使用Ehcache进行会话存储-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-ehcache</artifactId>

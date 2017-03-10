@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class OnlineSessionFactory implements SessionFactory {
 
-    @Override
+
     public Session createSession(SessionContext initData) {
         OnlineSession session = new OnlineSession();
         if (initData != null && initData instanceof WebSessionContext) {
