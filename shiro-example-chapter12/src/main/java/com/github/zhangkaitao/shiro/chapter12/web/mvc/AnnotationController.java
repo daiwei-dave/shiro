@@ -6,19 +6,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: daiwei
  * <p>Date: 14-2-12
  * <p>Version: 1.0
  */
 @Controller
 public class AnnotationController {
 
+    /**
+     *
+     * @return
+     */
     @RequestMapping("/hello1")
     public String hello1() {
         SecurityUtils.getSubject().checkRole("admin");
         return "success";
     }
 
+    /**
+     * 访问hello2方法的前提是当前用户有admin角色。当验证失败，其会抛出UnauthorizedException异常
+     * @return
+     */
     @RequiresRoles("admin")
     @RequestMapping("/hello2")
     public String hello2() {

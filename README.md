@@ -12,7 +12,7 @@
 <p style="font-size: 14px;"><a href="/blog/2026398" target="_blank">第九章 JSP标签</a></p>
 <p style="font-size: 14px;"><a href="/blog/2028675" target="_blank">第十章&nbsp; 会话管理</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2029217" target="_blank">第十一章&nbsp; 缓存机制</a></p>
-<p style="font-size: 14px;"><a href="/blog/2029717" target="_blank">第十二章&nbsp; 与Spring集成</a></p>
+<p style="font-size: 14px;"><a href="/blog/2029717" target="_blank">第十二章&nbsp; 与Spring集成</a>（重点掌握）</p>
 <p style="font-size: 14px;"><a href="/blog/2031823" target="_blank">第十三章&nbsp; RememberMe</a></p>
 <p style="font-size: 14px;"><a href="/blog/2036420" target="_blank">第十四章&nbsp; SSL</a></p>
 <p style="font-size: 14px;"><a href="/blog/2036730" target="_blank">第十五章&nbsp; 单点登录</a></p>
