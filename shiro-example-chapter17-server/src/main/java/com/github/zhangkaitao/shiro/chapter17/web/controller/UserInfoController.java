@@ -23,6 +23,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * 1、首先通过如http://localhost:8080/chapter17-server/userInfo? access_token=828beda907066d058584f37bcfd597b6进行访问；
+ 2、该控制器会验证access token的有效性；如果无效了将返回相应的错误，客户端再重新进行授权；
+ 3、如果有效，则返回当前登录用户的用户名。
  * <p>User: Zhang Kaitao
  * <p>Date: 14-2-16
  * <p>Version: 1.0

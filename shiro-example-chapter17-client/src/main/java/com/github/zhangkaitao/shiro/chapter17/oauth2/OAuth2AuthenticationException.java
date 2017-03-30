@@ -1,4 +1,4 @@
-package com.github.zhangkaitao.shiro.chapter18.oauth2;
+package com.github.zhangkaitao.shiro.chapter17.oauth2;
 
 import org.apache.shiro.authc.AuthenticationException;
 

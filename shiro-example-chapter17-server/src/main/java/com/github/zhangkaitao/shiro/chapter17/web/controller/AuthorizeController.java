@@ -34,7 +34,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
- * <p>User: Zhang Kaitao
+ * 授权控制器
+ * <p>User: daiwei
  * <p>Date: 14-2-16
  * <p>Version: 1.0
  */
@@ -68,9 +69,9 @@ public class AuthorizeController {
 
 
             Subject subject = SecurityUtils.getSubject();
-            //如果用户没有登录，跳转到登陆页面
+            //检验是否进行了身份验证
             if(!subject.isAuthenticated()) {
-                if(!login(subject, request)) {//登录失败时跳转到登陆页面
+                if(!login(subject, request)) {//没有跳转到登陆页面
                     model.addAttribute("client", clientService.findByClientId(oauthRequest.getClientId()));
                     return "oauth2login";
                 }
@@ -121,6 +122,12 @@ public class AuthorizeController {
         }
     }
 
+    /**
+     * 判断登陆
+     * @param subject
+     * @param request
+     * @return
+     */
     private boolean login(Subject subject, HttpServletRequest request) {
         if("get".equalsIgnoreCase(request.getMethod())) {
             return false;

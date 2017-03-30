@@ -29,7 +29,7 @@ public class ClientDaoImpl implements ClientDao {
 
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(new PreparedStatementCreator() {
-            @Override
+
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement psst = connection.prepareStatement(sql, new String[]{"id"});
                 int count = 1;
@@ -57,7 +57,7 @@ public class ClientDaoImpl implements ClientDao {
         jdbcTemplate.update(sql, clientId);
     }
 
-    @Override
+
     public Client findOne(Long clientId) {
         String sql = "select id, client_name, client_id, client_secret from oauth2_client where id=?";
         List<Client> clientList = jdbcTemplate.query(sql, new BeanPropertyRowMapper(Client.class), clientId);
@@ -67,14 +67,14 @@ public class ClientDaoImpl implements ClientDao {
         return clientList.get(0);
     }
 
-    @Override
+
     public List<Client> findAll() {
         String sql = "select id, client_name, client_id, client_secret from oauth2_client";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper(Client.class));
     }
 
 
-    @Override
+
     public Client findByClientId(String clientId) {
         String sql = "select id, client_name, client_id, client_secret from oauth2_client where client_id=?";
         List<Client> clientList = jdbcTemplate.query(sql, new BeanPropertyRowMapper(Client.class), clientId);
@@ -85,7 +85,7 @@ public class ClientDaoImpl implements ClientDao {
     }
 
 
-    @Override
+
     public Client findByClientSecret(String clientSecret) {
         String sql = "select id, client_name, client_id, client_secret from oauth2_client where client_secret=?";
         List<Client> clientList = jdbcTemplate.query(sql, new BeanPropertyRowMapper(Client.class), clientSecret);

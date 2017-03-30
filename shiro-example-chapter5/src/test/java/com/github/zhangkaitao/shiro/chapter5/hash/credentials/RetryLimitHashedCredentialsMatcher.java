@@ -13,6 +13,7 @@ import javax.security.auth.login.AccountLockedException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * 编码加密
  * <p>User: Zhang Kaitao
  * <p>Date: 14-1-28
  * <p>Version: 1.0
@@ -26,6 +27,13 @@ public class RetryLimitHashedCredentialsMatcher extends HashedCredentialsMatcher
         passwordRetryCache = cacheManager.getCache("passwordRetryCache");
     }
 
+    /**
+     * 密码重试次数限制,如果密码输入正确清除cache中的记录；
+     * 否则cache中的重试次数+1，如果超出5次那么抛出异常表示超出重试次数了。
+     * @param token
+     * @param info
+     * @return
+     */
     @Override
     public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
         String username = (String)token.getPrincipal();

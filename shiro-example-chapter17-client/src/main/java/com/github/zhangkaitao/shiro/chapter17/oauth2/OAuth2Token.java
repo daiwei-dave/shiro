@@ -1,4 +1,4 @@
-package com.github.zhangkaitao.shiro.chapter18.oauth2;
+package com.github.zhangkaitao.shiro.chapter17.oauth2;
 
 import org.apache.shiro.authc.AuthenticationToken;
 
@@ -12,7 +12,7 @@ public class OAuth2Token implements AuthenticationToken {
     public OAuth2Token(String authCode) {
         this.authCode = authCode;
     }
-
+    //身份验证编码
     private String authCode;
     private String principal;
 
@@ -32,7 +32,7 @@ public class OAuth2Token implements AuthenticationToken {
         this.principal = principal;
     }
 
-    @Override
+
     public Object getCredentials() {
         return authCode;
     }

@@ -27,7 +27,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.net.URISyntaxException;
 
 /**
- * <p>User: Zhang Kaitao
+ * 访问令牌控制器
+ * <p>User: daiwei
  * <p>Date: 14-2-16
  * <p>Version: 1.0
  */

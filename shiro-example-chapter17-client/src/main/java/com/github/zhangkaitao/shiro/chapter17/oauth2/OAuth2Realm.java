@@ -1,22 +1,25 @@
-package com.github.zhangkaitao.shiro.chapter18.oauth2;
+package com.github.zhangkaitao.shiro.chapter17.oauth2;
 
 import org.apache.oltu.oauth2.client.OAuthClient;
 import org.apache.oltu.oauth2.client.URLConnectionClient;
 import org.apache.oltu.oauth2.client.request.OAuthBearerClientRequest;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
 import org.apache.oltu.oauth2.client.response.OAuthAccessTokenResponse;
-import org.apache.oltu.oauth2.client.response.OAuthJSONAccessTokenResponse;
 import org.apache.oltu.oauth2.client.response.OAuthResourceResponse;
 import org.apache.oltu.oauth2.common.OAuth;
 import org.apache.oltu.oauth2.common.message.types.GrantType;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.subject.Subject;
 
 /**
- * <p>User: Zhang Kaitao
+ *  OAuth2验证
+ * <p>User: daiwei
  * <p>Date: 14-2-18
  * <p>Version: 1.0
  */
@@ -63,6 +66,15 @@ public class OAuth2Realm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         OAuth2Token oAuth2Token = (OAuth2Token) token;
         String code = oAuth2Token.getAuthCode();
+
+        Subject currentUser = SecurityUtils.getSubject();
+        Session session = currentUser.getSession();
+        if(code!=null){
+            session.setAttribute("code", code);
+        }else{
+            code=(String) session.getAttribute("code");
+        }
+
         String username = extractUsername(code);
 
         SimpleAuthenticationInfo authenticationInfo =
@@ -83,12 +95,13 @@ public class OAuth2Realm extends AuthorizingRealm {
                     .setCode(code)
                     .setRedirectURI(redirectUrl)
                     .buildQueryMessage();
-
+            //获取access token
             OAuthAccessTokenResponse oAuthResponse = oAuthClient.accessToken(accessTokenRequest, OAuth.HttpMethod.POST);
 
             String accessToken = oAuthResponse.getAccessToken();
             Long expiresIn = oAuthResponse.getExpiresIn();
 
+            //获取user info
             OAuthClientRequest userInfoRequest = new OAuthBearerClientRequest(userInfoUrl)
                     .setAccessToken(accessToken).buildQueryMessage();
 
